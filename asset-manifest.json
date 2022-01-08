@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/r3f-gpgpu-particles/static/css/main.0f9e7f0c.css",
+    "main.js": "/r3f-gpgpu-particles/static/js/main.79f51c91.js",
+    "static/js/787.7ea2481d.chunk.js": "/r3f-gpgpu-particles/static/js/787.7ea2481d.chunk.js",
+    "index.html": "/r3f-gpgpu-particles/index.html",
+    "main.0f9e7f0c.css.map": "/r3f-gpgpu-particles/static/css/main.0f9e7f0c.css.map",
+    "main.79f51c91.js.map": "/r3f-gpgpu-particles/static/js/main.79f51c91.js.map",
+    "787.7ea2481d.chunk.js.map": "/r3f-gpgpu-particles/static/js/787.7ea2481d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f9e7f0c.css",
+    "static/js/main.79f51c91.js"
+  ]
+}
