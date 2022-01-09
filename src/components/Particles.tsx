@@ -26,7 +26,7 @@ export const Particles: VFC = () => {
 		return Float32Array.from(vertices)
 	}, [])
 
-	// make shader
+	// create material
 	const matShader = useMemo(() => {
 		const mat = new THREE.ShaderMaterial({
 			uniforms: {
@@ -51,6 +51,13 @@ export const Particles: VFC = () => {
 		return mat
 	}, [matShader])
 
+	// create geometry
+	const geometry = useMemo(() => {
+		const geo = new THREE.BufferGeometry()
+		geo.setAttribute('position', new THREE.BufferAttribute(vertices, 3))
+		return geo
+	}, [vertices])
+
 	// controller
 	const gui = GUIController.instance
 	gui.initParticleColors()
@@ -64,16 +71,8 @@ export const Particles: VFC = () => {
 
 	return (
 		<>
-			<points material={matShader}>
-				<bufferGeometry>
-					<bufferAttribute attachObject={['attributes', 'position']} args={[vertices, 3]} />
-				</bufferGeometry>
-			</points>
-			<points material={matShader2} rotation={[Math.PI, 0, 0]}>
-				<bufferGeometry>
-					<bufferAttribute attachObject={['attributes', 'position']} args={[vertices, 3]} />
-				</bufferGeometry>
-			</points>
+			<points geometry={geometry} material={matShader} />
+			<points geometry={geometry} material={matShader2} rotation={[Math.PI, 0, 0]} />
 		</>
 	)
 }
