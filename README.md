@@ -26,3 +26,4 @@ https://nemutas.github.io/r3f-gpgpu-particles/
 
 # Detail
 実装の詳細は、Qiitaにまとめています。
+[【React Three Fiber】GPGPUを使用したParticlesの実装](https://qiita.com/nemutas/items/b40baa2a1f33fae6b20d)
