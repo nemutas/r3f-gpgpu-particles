@@ -5,7 +5,7 @@ export class GUIController {
 	private static _instance: GUIController | null
 	private _gui
 
-	constructor() {
+	private constructor() {
 		this._gui = new GUI()
 	}
 
