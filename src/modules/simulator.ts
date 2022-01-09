@@ -11,6 +11,7 @@ import * as THREE from 'three';
 import { GPUComputationRenderer, Variable } from 'three/examples/jsm/misc/GPUComputationRenderer';
 import { positionFragmentShader } from '../glsl/positionShader';
 import { GUIController } from './gui';
+import { ParticlePositonParams } from './store';
 import { updateParticlesPositionUniforms } from './update';
 
 export class Simulator {
@@ -56,9 +57,9 @@ export class Simulator {
 		this._positionMaterial = positionVariable.material
 		this._positionMaterial.uniforms['u_defaultTexture'] = { value: dtPosition.clone() }
 		this._positionMaterial.uniforms['u_time'] = { value: 0 }
-		this._positionMaterial.uniforms['u_frequency'] = { value: 0.6 }
-		this._positionMaterial.uniforms['u_amplitude'] = { value: 0.04 }
-		this._positionMaterial.uniforms['u_divergence'] = { value: 1.008 }
+		this._positionMaterial.uniforms['u_frequency'] = { value: ParticlePositonParams.frequency.derive() }
+		this._positionMaterial.uniforms['u_amplitude'] = { value: ParticlePositonParams.amplitude.derive() }
+		this._positionMaterial.uniforms['u_divergence'] = { value: ParticlePositonParams.divergence.derive() }
 
 		// add variable
 		this._variables.push(positionVariable)

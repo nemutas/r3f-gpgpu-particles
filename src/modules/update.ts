@@ -24,8 +24,8 @@ export const updateParticlesUniforms = (material: THREE.ShaderMaterial, simulato
 }
 
 export const updateParticlesPositionUniforms = (material: THREE.ShaderMaterial) => {
-	material.uniforms.u_time.value += ParticlePositonParams.dt * 0.01
-	material.uniforms.u_frequency.value = ParticlePositonParams.frequency
-	material.uniforms.u_amplitude.value = ParticlePositonParams.amplitude * 0.1
-	material.uniforms.u_divergence.value = 1 + ParticlePositonParams.divergence * 0.01
+	material.uniforms.u_time.value += ParticlePositonParams.dt.derive()
+	material.uniforms.u_frequency.value = ParticlePositonParams.frequency.derive()
+	material.uniforms.u_amplitude.value = ParticlePositonParams.amplitude.derive()
+	material.uniforms.u_divergence.value = ParticlePositonParams.divergence.derive()
 }

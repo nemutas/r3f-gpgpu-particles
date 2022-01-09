@@ -37,7 +37,7 @@ export class GUIController {
 		const folder = this._folder('Particles')
 
 		const add = (name: string, param: [number, number, number]) => {
-			this._uncontainedName(folder, name) && folder.add(ParticlePositonParams, name, ...param)
+			this._uncontainedName(folder, name) && folder.add(ParticlePositonParams[name], 'value', ...param).name(name)
 		}
 
 		add('dt', [0, 1, 0.01])
